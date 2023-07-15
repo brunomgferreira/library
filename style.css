@@ -33,16 +33,16 @@ body {
 /* Main */
 
 .main {
-    display: flex;
     align-items: center;
-    justify-content: center;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 30px;
 }
 
 .btn {
-    display: block;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .add {
@@ -68,10 +68,49 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+
 }
 
+/* Book Card */
 
+.book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    width: minmax(300px, 1fr);
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+    border-radius: 20px;
+
+    font-size: 30px;
+    text-align: center;
+    gap: 20px;
+}
+
+.book-card button {
+    font-size: 20px;
+    background-color: rgb(230, 230, 230);
+    border-style: none;
+    border-radius: 10px;
+    padding: 16px 8px;
+    transition: 0.15s;
+}
+
+.book-card button:hover {
+    background-color: rgb(215, 215, 215);
+}
+
+.book-card button:active {
+    scale: 0.9;
+}
+
+#read {
+    background-color: rgb(32, 255, 107);
+    background-color: rgb(255, 150, 150);
+}
 
 /* Footer */
 
@@ -110,20 +149,10 @@ body {
     .main {
         gap: 50px;
     }
-
-    /* .container { 
-        width: 400px;
-        height: 400px;
-    }*/
 }
 
 @media(max-width: 650px) {
     .header h1 {
         font-size: 50px;
     }
-
-    /* .container {
-        width: 300px;
-        height: 300px;
-    }*/
 }
