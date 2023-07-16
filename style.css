@@ -1,3 +1,9 @@
+:root {
+    --red: rgb(255, 33, 33);
+    --light-red: rgb(255, 150, 150);
+    --light-green: rgb(32, 255, 107);
+}
+
 html {
     position: relative;
     min-height: 100%;
@@ -90,26 +96,87 @@ body {
     gap: 20px;
 }
 
-.book-card button {
+.btn {
     font-size: 20px;
-    background-color: rgb(230, 230, 230);
+    /* background-color: rgb(230, 230, 230); */
     border-style: none;
     border-radius: 10px;
     padding: 16px 8px;
     transition: 0.15s;
 }
 
-.book-card button:hover {
-    background-color: rgb(215, 215, 215);
+.btn:hover {
+    filter: brightness(90%);
 }
 
-.book-card button:active {
+.btn:active {
     scale: 0.9;
 }
 
-#read {
-    background-color: rgb(32, 255, 107);
-    background-color: rgb(255, 150, 150);
+.btn-light-green {
+    background-color: var(--light-green);
+}
+
+.btn-light-red {
+    background-color: var(--light-red);
+}
+
+/* Modal */
+
+.modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+
+    font-size: 24px;
+    text-align: center;
+    gap: 20px;
+}
+
+.add-book-form {
+    padding: 20px;
+    width: 340px;
+    background-color: white;
+    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.error-msg {
+    color: var(--red);
+    display: none;
+    margin: 0;
+    padding: 0;
+}
+
+.input {
+    background-color: #dee2e6;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 16px 18px;
+}
+
+.is-read {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox {
+    scale: 1.5;
 }
 
 /* Footer */
