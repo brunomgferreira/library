@@ -81,6 +81,7 @@ function addNewBook(e){
         form.reset()
         errorMsg.textContent = '';
         errorMsg.style.display = 'none';
+        addBookModal.style.display = 'none';
         library.addBook(book);
         displayBooks();
     }
