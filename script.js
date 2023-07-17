@@ -29,6 +29,9 @@ class Book {
         this.pages = pages;
         this.isRead = isRead;
     }
+    toggleRead(){
+        this.isRead = !this.isRead;
+    }
 }
 
 class Library {
@@ -116,6 +119,7 @@ function displayBook(book, index){
     bookCard.appendChild(pages);
     bookCard.appendChild(read);
     bookCard.appendChild(remove);
+    read.addEventListener('click', toggleReadStatus);
     remove.addEventListener('click', removeBookCard);
     grid.appendChild(bookCard);
 }
@@ -133,5 +137,11 @@ function displayBooks(){
 function removeBookCard(e){
     var title = library.books[e.target.parentNode.id[e.target.parentNode.id.length -1]].title;
     library.removeBook(title);
+    displayBooks();
+}
+
+function toggleReadStatus(e){
+    var title = library.books[e.target.parentNode.id[e.target.parentNode.id.length -1]].title;
+    library.getBook(title).toggleRead();
     displayBooks();
 }
